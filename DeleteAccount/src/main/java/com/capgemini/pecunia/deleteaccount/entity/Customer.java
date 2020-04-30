@@ -1,14 +1,11 @@
-package com.capgemini.pecunia.addaccount.entity;
+package com.capgemini.pecunia.deleteaccount.entity;
 
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name="Customer")
@@ -18,7 +15,6 @@ public class Customer  {
 	private String aadharNumber;
 	@Column(length=15)
 	private String customerName;
-	
 	@Column(length=10)
 	private String contactNumber;
 	@Column(length=15)
@@ -29,8 +25,7 @@ public class Customer  {
 	private String gender;
 	private String address;
 	
-	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(targetEntity=Account.class)
 	@JoinColumn(name="accountId")
 	private Account account;
 	
