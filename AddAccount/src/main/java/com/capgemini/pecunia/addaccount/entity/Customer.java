@@ -4,6 +4,8 @@ package com.capgemini.pecunia.addaccount.entity;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -15,7 +17,7 @@ import javax.persistence.Table;
 public class Customer  {
 	@Id
 	@Column(length=12)
-	private String aadharNumber;
+	private Long aadharNumber;
 	@Column(length=15)
 	private String customerName;
 	
@@ -33,7 +35,6 @@ public class Customer  {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="accountId")
 	private Account account;
-	
 	
 	
 	public Account getAccount() {
@@ -61,10 +62,10 @@ public class Customer  {
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public String getAadharNumber() {
+	public Long getAadharNumber() {
 		return aadharNumber;
 	}
-	public void setAadharNumber(String aadharNumber) {
+	public void setAadharNumber(Long aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
 	public String getPanNumber() {

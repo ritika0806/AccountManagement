@@ -16,11 +16,10 @@ import javax.persistence.Table;
 public class Customer  {
 	@Id
 	@Column(length=12)
-	private String aadharNumber;
+	private Long aadharNumber;
 	@Column(length=15)
 	private String customerName;
-	@Column(length=15)
-	private String userName;
+	
 	@Column(length=10)
 	private String contactNumber;
 	@Column(length=15)
@@ -55,22 +54,17 @@ public class Customer  {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 	public String getContactNumber() {
 		return contactNumber;
 	}
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public String getAadharNumber() {
+	public Long getAadharNumber() {
 		return aadharNumber;
 	}
-	public void setAadharNumber(String aadharNumber) {
+	public void setAadharNumber(Long aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
 	public String getPanNumber() {

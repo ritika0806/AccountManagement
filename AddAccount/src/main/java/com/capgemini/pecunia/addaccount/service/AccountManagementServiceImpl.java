@@ -14,9 +14,9 @@ public class AccountManagementServiceImpl implements AccountManagementService {
 	private CustomerDao dao;
 	
 	@Override
-	public String addAccount(Customer customer) {
-	 dao.save(customer);
-	 return "account successfully created";
+	public Customer addAccount(Customer customer) {
+	 return dao.save(customer);
+	 
 	}
 
 }

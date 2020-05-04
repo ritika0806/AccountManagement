@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Account {
 	@Id   //primarykey
 	@Column(length=12)  //length of column      
-	private String accountId;
+	private Long accountId;
 	@Column(length=15)
 	private String branch;
 	@Column(length=15)
@@ -20,10 +20,10 @@ public class Account {
 	private Long amount;
 	
 	
-	public String getAccountId() {
+	public Long getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(String accountId) {
+	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
 	public String getBranch() {
@@ -44,10 +44,5 @@ public class Account {
 	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
-	
-	
-	
-	
-	
 	
 }

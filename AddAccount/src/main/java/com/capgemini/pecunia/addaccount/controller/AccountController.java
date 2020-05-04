@@ -21,11 +21,12 @@ public class AccountController {
 	private AccountManagementService service;
 	
 	@PostMapping("/create")
-public ResponseEntity<String> addAccount(@RequestBody Customer customer ){
+	public ResponseEntity<Customer> addAccount(@RequestBody Customer customer ){
 		
-		 service.addAccount(customer);
-		ResponseEntity<String> responseEntity = new ResponseEntity<String>("Account created successfully",HttpStatus.OK);
+		Customer cust= service.addAccount(customer);
+		ResponseEntity<Customer> responseEntity = new ResponseEntity<Customer>(cust,HttpStatus.OK);
 		return responseEntity;
+		
 		
 	}
 	

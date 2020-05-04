@@ -2,11 +2,14 @@ package com.capgemini.pecunia.updateaccount.service;
 
 public interface AccountManagementService {
 
-	void updateAccount(String accountId,String customerName, String contactNumber, String address);
+	
+
+	void updateName(Long accountId, String customerName);
 
 	
 
-
+void updateContact(Long accountId, String customerContact);
+void updateAddress(Long accountId, String address);
 
 	
 

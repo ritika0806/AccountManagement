@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.pecunia.deleteaccount.dao.AccountManagementDao;
+import com.capgemini.pecunia.exceptions.Id_NotFound_Exception;
 
 
 @SuppressWarnings("unused")
@@ -17,7 +18,7 @@ public class AccountManagementServiceImpl implements AccountManagementService {
 	private AccountManagementDao dao;
 
 	@Override
-	public String deleteAccount(String accountId) {
+	public String deleteAccount(long accountId) throws Id_NotFound_Exception {
 		System.out.println("this is service"+accountId);
 		
 		  dao.deletecustomer(accountId);

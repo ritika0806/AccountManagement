@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.pecunia.deleteaccount.service.AccountManagementServiceImpl;
+import com.capgemini.pecunia.exceptions.Id_NotFound_Exception;
 
 @RestController
 @RequestMapping("/deleteService")
@@ -21,11 +22,18 @@ public class AccountController {
 	
 	
 	@DeleteMapping("/delete/{accountId}")
-	public ResponseEntity<String> deleteAccount(@PathVariable("accountId") String accountId) 
+	public ResponseEntity<String> deleteAccount(@PathVariable("accountId") long accountId) throws Id_NotFound_Exception
 	{
 		ResponseEntity<String> rs =  new ResponseEntity<String>(service.deleteAccount(accountId),HttpStatus.OK);
+		if(rs==null)
+		{
+			throw new Id_NotFound_Exception("Account with "+accountId+" doesn't exist....!");
+		}
+		else
 			  return rs;
 	}
+	
+
 	
 
 	
