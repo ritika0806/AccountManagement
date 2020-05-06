@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Customer  {
 	@Id
 	@Column(length=12)
-	private Long aadharNumber;
+	private long aadharNumber;
 	@Column(length=15)
 	private String customerName;
 	@Column(length=10)
@@ -56,10 +56,10 @@ public class Customer  {
 	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public Long getAadharNumber() {
+	public long getAadharNumber() {
 		return aadharNumber;
 	}
-	public void setAadharNumber(Long aadharNumber) {
+	public void setAadharNumber(long aadharNumber) {
 		this.aadharNumber = aadharNumber;
 	}
 	public String getPanNumber() {

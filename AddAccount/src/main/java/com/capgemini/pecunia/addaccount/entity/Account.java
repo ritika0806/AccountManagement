@@ -1,6 +1,5 @@
 package com.capgemini.pecunia.addaccount.entity;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,8 +27,6 @@ public class Account {
 	@Column(length=8)
 	private long amount;
 	
-	
-	
 	public String getBranch() {
 		return branch;
 	}
@@ -54,11 +51,6 @@ public class Account {
 	public void setAmount(long amount) {
 		this.amount = amount;
 	}
-	
-	
-	
-	
-	
-	
+		
 	
 }

@@ -12,19 +12,19 @@ import javax.persistence.Table;
 public class Account {
 	@Id   //primarykey
 	@Column(length=12)  //length of column      
-	private Long accountId;
+	private long accountId;
 	@Column(length=15)
 	private String branch;
 	@Column(length=15)
 	private String accountType;
 	@Column(length=8)
-	private Long amount;
+	private long amount;
 	
 	
-	public Long getAccountId() {
+	public long getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(Long accountId) {
+	public void setAccountId(long accountId) {
 		this.accountId = accountId;
 	}
 	public String getBranch() {
@@ -39,10 +39,10 @@ public class Account {
 	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public Long getAmount() {
+	public long getAmount() {
 		return amount;
 	}
-	public void setAmount(Long amount) {
+	public void setAmount(long amount) {
 		this.amount = amount;
 	}
 	
